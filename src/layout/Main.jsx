@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Movies from "../components/Movies";
 import Preloader from "../components/Preloader";
+import Search from "../components/Search";
 
 export default function Main() {
 
@@ -24,12 +25,25 @@ export default function Main() {
     console.log(error.message);
   }
 
-  console.log(movies)
+ 
+  const searchMovies = (str) => {
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=58c515fd&s=${str}`)
+      .then((res) => res.json())
+      .then(
+        (res) => {
+          setMovies(res.Search);
+        },
+        (error) => {
+          setError(error);
+        }
+      );
+  }
   
 
 
   return (
     <main className="content conteiner">
+       <Search searchMovies={searchMovies}/>
       {
         movies.length ? (
           <Movies movies={movies} />
