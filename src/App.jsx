@@ -1,21 +1,17 @@
-import Header from './layout/Header'
-import Footer from './layout/Footer'
-import Main from './layout/Main'
-import Search from './components/Search'
-import './App.css'
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+import Main from "./layout/Main";
 
+import "./App.css";
 
 function App() {
-  
-
   return (
     <>
-     <Header />
-    
+      <Header />
       <Main />
-     <Footer />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

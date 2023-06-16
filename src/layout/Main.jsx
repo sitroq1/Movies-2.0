@@ -26,8 +26,9 @@ export default function Main() {
   }
 
  
-  const searchMovies = (str) => {
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=58c515fd&s=${str}`)
+  const searchMovies = (str, type='all') => {
+    const isType = type === 'all' ? '' : `&type=${type}` 
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=58c515fd&s=${str}${isType}`)
       .then((res) => res.json())
       .then(
         (res) => {
