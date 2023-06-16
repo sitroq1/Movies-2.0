@@ -4,7 +4,7 @@ import Preloader from "../components/Preloader";
 import Search from "../components/Search";
 
 export default function Main() {
-  const API_KEY = import.meta.env.REACT_APP_API_KEY;
+  const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY
 
   const [error, setError] = useState(null);
   const [movies, setMovies] = useState([]);

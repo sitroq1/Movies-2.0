@@ -16,11 +16,11 @@ export default function Search({ searchMovies }) {
 
   const filterSearch = (event) => {
     setSearchType(event.target.dataset.type);
-  };
 
-  useEffect(() => {
-    searchMovies(searchValue, searchType)
-  }, [searchType])
+    
+  };
+  
+  
   return (
     <div className="row conteiner search">
       <div className="input-field">
