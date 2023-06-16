@@ -23,10 +23,18 @@ export default function Main() {
     console.log(error.message);
   }
 
+  console.log(movies)
+  
+
 
   return (
     <main className="content">
-      <Movies movies={movies} />
+      {
+        movies.length ? (
+          <Movies movies={movies} />
+        ) : <h3 className="preloader">Идет загрузка...</h3>
+      }
+      
     </main>
   );
 }
