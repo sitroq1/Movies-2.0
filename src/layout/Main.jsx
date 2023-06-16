@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Movies from "../components/Movies";
+import Preloader from "../components/Preloader";
 
 export default function Main() {
 
@@ -28,11 +29,11 @@ export default function Main() {
 
 
   return (
-    <main className="content">
+    <main className="content conteiner">
       {
         movies.length ? (
           <Movies movies={movies} />
-        ) : <h3 className="preloader">Идет загрузка...</h3>
+        ) : <Preloader/>
       }
       
     </main>
