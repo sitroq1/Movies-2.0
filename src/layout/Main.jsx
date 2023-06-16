@@ -7,6 +7,7 @@ export default function Main() {
 
   const [error, setError] = useState(null);
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("http://www.omdbapi.com/?i=tt3896198&apikey=58c515fd&s=matrix")
@@ -14,6 +15,7 @@ export default function Main() {
       .then(
         (res) => {
           setMovies(res.Search);
+          setLoading(false)
         },
         (error) => {
           setError(error);
@@ -33,6 +35,7 @@ export default function Main() {
       .then(
         (res) => {
           setMovies(res.Search);
+          setLoading(false);
         },
         (error) => {
           setError(error);
@@ -46,7 +49,7 @@ export default function Main() {
     <main className="content conteiner">
        <Search searchMovies={searchMovies}/>
       {
-        movies.length ? (
+        !loading ? (
           <Movies movies={movies} />
         ) : <Preloader/>
       }
