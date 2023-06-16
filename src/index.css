@@ -1,0 +1,22 @@
+.content {
+  min-height: calc(100vh - 65px - 179.55px);
+}
+
+.conteiner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.search {
+  position: relative;
+}
+.search-btn {
+  position: absolute;
+  top: 0;
+  right:0
+}
