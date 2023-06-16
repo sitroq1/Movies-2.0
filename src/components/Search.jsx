@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Search({ searchMovies }) {
   const [searchValue, setSearchValue] = useState("");
-  const [searchType, setSearchType] = useState("");
+  const [searchType, setSearchType] = useState("all");
   const handleChange = (event) => {
     setSearchValue(event.target.value);
   };
+
 
   const handleKey = (event) => {
     if (event.key === "Enter") {
@@ -15,9 +16,11 @@ export default function Search({ searchMovies }) {
 
   const filterSearch = (event) => {
     setSearchType(event.target.dataset.type);
-    searchMovies(searchValue, searchType);
   };
 
+  useEffect(() => {
+    searchMovies(searchValue, searchType)
+  }, [searchType])
   return (
     <div className="row conteiner search">
       <div className="input-field">
